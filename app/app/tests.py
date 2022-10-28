@@ -13,3 +13,4 @@ class ClacTests(SimpleTestCase):
 
         self.assertEqual(res, 11)
 
+
