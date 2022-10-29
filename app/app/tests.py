@@ -13,4 +13,4 @@ class ClacTests(SimpleTestCase):
         """Test adding numbers Together"""
         res = calc.add(5, 6)
 
-        self.assertequal(res, 11)
+        self.assertEqual(res, 11)
