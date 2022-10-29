@@ -1,24 +1,15 @@
 """
-Sample test
+Sample Test
 """
-
-
-from django.test import SimpleTestCase
-
+from  django.test import SimpleTestCase
 
 from app import calc
 
-class ClacTests(SimpleTestCase):
-    """Test the calc module """
-
-
-    def test_add_numbers(self):
-
-        """Test adding numbers togeather"""
-        
-        res = calc.add(5, 6)
-        
+class ClacTests():
+    """Test the calc module"""
     
-        self.assertEqual(res, 11)
+    def test_add_numbers(self):
+        """Test adding numbers Together"""
+        res = calc.add(5,6)
 
-
+        self.assertequal(res, 11)
