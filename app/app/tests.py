@@ -12,6 +12,6 @@ class ClacTests():
     
     def test_add_numbers(self):
         """Test adding numbers Together"""
-        res = calc.add(5,6)
+        res = calc.add(5, 6)
 
         self.assertequal(res, 11)
