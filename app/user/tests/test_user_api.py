@@ -14,6 +14,7 @@ TOKEN_URL = reverse('user:token')
 ME_URL = reverse('user:me')
 
 def create_user(**params):
+
     """Create and return a new user."""
     return get_user_model().objects.create_user(**params)
 
@@ -35,6 +36,7 @@ class PublicUserApiTests(TestCase):
         user = get_user_model().objects.get(email=payload['email'])
         self.assertTrue(user.check_password(payload['password']))
         self.assertNotIn('password', res.data)
+
 
     def test_user_with_email_exists_error(self):
         """Test error returned if user with email exists."""
@@ -66,10 +68,10 @@ class PublicUserApiTests(TestCase):
     def test_create_token_for_user(self):
         """Test generates token for valid credentials."""
         user_details = {
-             'name': 'Test Name',
+            'name': "Test Name",
             'email': 'test@example.com',
-            'password': 'test-user-password123',
-        }
+             'password': 'test-user-password123'
+             }
         create_user(**user_details)
 
         payload = {
@@ -80,6 +82,7 @@ class PublicUserApiTests(TestCase):
 
         self.assertIn('token', res.data)
         self.assertEqual(res.status_code, status.HTTP_200_OK)
+
 
     def test_create_token_bad_credentials(self):
         """Test returns error if credentials invalid."""
